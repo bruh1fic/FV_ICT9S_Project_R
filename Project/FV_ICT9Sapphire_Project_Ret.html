@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FV_ICT9Sapphire_Project_Ret</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Length Conversion Calculator</h1>
+    <div class="form-group">
+      <label for="millimeterInput">Millimeter:</label>
+      <input type="number" id="millimeterInput" class="form-control" oninput="convertLength()">
+    </div>
+    <div class="form-group">
+      <label for="centimeterOutput">Centimeter:</label>
+      <input type="number" id="centimeterOutput" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+      <label for="meterOutput">Meter:</label>
+      <input type="number" id="meterOutput" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+      <label for="kilometerOutput">Kilometer:</label>
+      <input type="number" id="kilometerOutput" class="form-control" readonly>
+    </div>
+  </div>
+
+  <script>
+    function convertLength() {
+      const millimeterInput = document.getElementById("millimeterInput").value;
+      const centimeterOutput = document.getElementById("centimeterOutput");
+      const meterOutput = document.getElementById("meterOutput");
+      const kilometerOutput = document.getElementById("kilometerOutput");
+
+      const centimeter = millimeterInput / 10;
+      const meter = millimeterInput / 1000;
+      const kilometer = millimeterInput / 1000000;
+
+      centimeterOutput.value = centimeter;
+      meterOutput.value = meter;
+      kilometerOutput.value = kilometer;
+    }
+  </script>
+</body>
+</html>
